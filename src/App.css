@@ -1,0 +1,109 @@
+.App {
+   margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    position: relative;
+  overflow: hidden;
+    
+}
+
+.User {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:20px;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.User:hover {
+  transform: scale(1.05);
+}
+
+.title {
+  font-size: 58px;
+  font-weight: 700;
+  color: #f7f7f7;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  white-space: nowrap; 
+  border-right: .15em solid #f7f7f7; 
+  animation: typing 4s steps(40, end) 1s forwards, pause 1s, 4s infinite, blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #f7f7f7 }
+}
+
+
+.wave {
+  animation-name: wave-animation;  
+  animation-duration: 2.5s;       
+  animation-iteration-count: infinite;  
+  transform-origin: 70% 70%;       
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) } 
+  100% { transform: rotate( 0.0deg) }
+}
+
+.falling-stars::before {
+  content: '';
+  position: absolute;
+  top: -50px; 
+  left: -50px; 
+  width: 100%; 
+  height: 100%; 
+  background: radial-gradient(circle, #401988 0%, rgba(255, 255, 255, 0) 50%);
+  opacity: 0.8;
+  pointer-events: none;
+  animation: stars-move 10s infinite;
+}
+
+@keyframes stars-move {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translate(calc(50vw - 50px), -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(50vw - 50px), calc(100vh - 50px)) scale(0.8);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translate(-50%, calc(100vh - 50px)) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.8;
+  }
+}
